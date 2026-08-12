@@ -1,6 +1,18 @@
 # Issue Log
 
-Real production mistakes and fixes. **Newest first.** Don't delete old entries — mark them outdated if a fix stops working, but keep the history.
+Real production mistakes and fixes. **Newest first.** Don't delete old entries — mark them outdated if a fix stops working, but keep the history. Chronological order, latest first.
+
+---
+
+## 2026-08-12 — Log: Discovered Higgsfield's official face-consistency tool
+
+Discovered `higgsfield-soul-id` — an official Higgsfield AI skill that automates face consistency for characters. Instead of manually re-uploading/re-describing a character's face every time (current method), it trains one reusable face ID and lets me reuse it instantly across future generations.
+
+**Where this helps:** big projects with lots of characters — it would save serious time there.
+
+**Why not now:** current workload doesn't need it. I can do the manual method myself; it takes more time but is safer (the automated tool's install process carries a minor security tradeoff — see toolkit doc for details).
+
+**Decision:** parked, not installed. Logging it here as a known option for later — if a large-cast project comes up (e.g. manga-style production), revisit and install then.
 
 ---
 
