@@ -4,6 +4,32 @@
 
 ---
 
+## Technique: Lock Geometry First, Animate Second
+*Added 2026-08-12. Verify this is still relevant before relying on it — model capabilities for spatial accuracy move fast, and this technique may become unnecessary as models improve.*
+
+**Use when:** a shot keeps failing on spatial/positional accuracy (wrong seat, wrong side of room, wrong facing direction, wrong entrance point) after multiple prompt rewrites — wording alone isn't fixing it, and the same wrong default keeps appearing.
+
+**Why this happens (as of 2026-08-12):** video/image models carry strong statistical bias toward the most common version of a given composition in their training data (e.g. "back row" in a theater/briefing-room shot, "enters from the visually obvious side" in an establishing shot). Past a certain point, more precise wording stops helping — the model isn't failing to understand the instruction, it's actively defaulting against it.
+
+**How to tell you've hit this wall, not a wording problem:**
+- The same spatial error persists across multiple structurally different prompt attempts (prose, negative constraints, anchor objects, labeled sections, timestamps, plain-language rewrites)
+- A schematic/diagram reference doesn't fix it either
+- It fails the same way in both video and static-image generation
+
+**The fix — split into two separate problems, don't solve both at once:**
+
+1. **Lock the geometry as a static image first.** Get one correct still where every element (character position, facing direction, object placement) is right — by any means necessary: multiple regeneration attempts, a different tool/model, manual compositing, or an external AI (e.g. having another model attempt the same still and cross-checking). Don't move on until this single frame is fully correct.
+2. **Animate motion on top of the correct still, not from scratch.** Use the locked-correct image as the sole/primary reference for the video generation. Only ask the model to add camera motion or minor animation — not to also solve placement at the same time.
+3. **Favor the model's natural motion bias.** Push-in is generally an easier, more default-aligned move for these models than pull-back/reveal, as of 2026-08-12. If the shot calls for a pull-back, generate a push-in instead and reverse the clip in post (Jianying: select clip → 倒放/Reverse). Same applies to other move pairs where one direction is closer to training-data default than its opposite. **Re-test this assumption periodically — model defaults shift with new versions.**
+4. **Mute/replace baked-in audio after reversing** — reversed audio (footsteps, hums with directional character) can sound wrong even when the reversed video looks fine.
+
+**Bottom line:** if a shot needs correct spatial placement *and* correct camera motion, and it's failing, stop trying to get both from one generation. Nail the geometry as a still, then only ask for motion.
+
+**Status check log:**
+- 2026-08-12: Confirmed working, this session, on Seedance/Lovart for a briefing-room seat-position failure.
+
+---
+
 ## 2026-08-12 — Initial toolkit (source: Higgsfield Cannes Manual + OSideMedia/higgsfield-ai-prompt-skill)
 
 ### Tool selection notes (your own findings)
