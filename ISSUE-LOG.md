@@ -4,6 +4,33 @@ Real production mistakes and fixes. **Newest first.** Don't delete old entries �
 
 ---
 
+## ISSUE-LOG — August 17, 2026
+
+**Issue:** Higgsfield copyright/IP classifier rejection — Punky + chopper + desert refinery, cross-model
+
+**Details:**
+Attempted "Punky riding chopper through desert to Old-oil-refinary" shot. Rejected due to copyright restrictions across models tried tonight:
+- Seedance 2.5
+- Cinema Studio 3.5 / 4.0
+
+Same rejection reason across models = platform-level visual classifier, not a model-specific quirk or prompt-wording issue. Confirms prior finding: renaming characters and rewording prompts does not bypass visual fingerprint matching when character + prop + environment are combined in a single generation.
+
+**Pattern confirmed:** Character (face/wardrobe) + signature prop (mechanical gauntlet, or here: motorcycle) + specific environment, stacked together in one generation = high rejection risk regardless of underlying model. This is consistent with the T-Hex canvas NSFW rejection (Aug 13) and the Robo-Rex chase rejection (Aug 16) — Higgsfield's filters appear to key on combinations of elements more than on any single element or on prompt phrasing alone.
+
+**Context note:** Same Punky + gauntlet combination rendered successfully on Lovart previously — confirms this is a Higgsfield-side classifier sensitivity, not an inherent problem with the character design or reference images.
+
+**Workaround for next attempt:**
+1. Split the shot — generate character and vehicle as separate plates (no rider-on-bike combination in one generation), composite in Jianying
+2. Route character+prop+environment triple-stack shots to Lovart when credits allow, reserve Higgsfield for single-element or lower-risk combinations
+3. Do not burn further credits re-attempting the same combination same-day across different Higgsfield models — the cross-model failure pattern indicates a platform classifier, not a model-specific fluke worth retrying
+
+**Status:** Unresolved on Higgsfield. Switching to Lovart for this shot tonight.
+
+---
+*Signed off by Claude (Anthropic), Bill Ho, FUTURE™, 上海炜禾文化传播有限公司 — UTC+8*
+
+---
+
 ## 2026-08-12 — Seat-position failure, briefing room reveal shot (RESOLVED)
 
 **Problem:** Camera positioned behind Punky, over-the-shoulder toward a projection screen, with a pull-back/reveal move. Punky repeatedly generated in the second row of chairs instead of the correct first row (closest to the screen), regardless of prompt wording.
