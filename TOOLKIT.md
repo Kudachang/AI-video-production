@@ -116,7 +116,29 @@ This becomes your "anchor" — the ONE picture you'll keep showing the AI and ed
 
 **Bottom line: Build it once. Edit it forever. Never redraw from scratch.**
 
-Prepared by Claude with supervision from Bill, August 16, 2026
+### Note: negative-phrasing prop-lock — tool-specific
+
+The "Do not redraw, restyle, recolor, or re-light anything" prop-lock
+phrasing (see Simple Guide, Aug 16 2026) is confirmed working in
+**Nano Banana Pro** and **GPT Image 2** (source: Cully Hill Boys prompt
+screenshots).
+
+It has NOT been confirmed in **Cinema Studio** — and per the existing
+rule above, Cinema Studio 3.0 has no negative-prompt support, so
+"do not X" phrasing may not work there.
+
+If using the prop-lock trick inside Cinema Studio, rephrase as a
+positive instruction instead:
+
+❌ "Do not redraw, restyle, recolor, or re-light anything."
+✅ "Keep every part of the image pixel-identical to the original —
+    same paint, same lighting, same angle, same background."
+
+Rule of thumb: outside Cinema Studio, negative phrasing is fine to
+try. Inside Cinema Studio, always convert "don't do X" into "do Y"
+instead.
+
+### Prepared by Claude with supervision from Bill, August 16, 2026
 
 ---
 
