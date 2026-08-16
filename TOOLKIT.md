@@ -4,6 +4,122 @@
 
 ---
 
+# The Simple Guide: How to Keep Characters, Props & Locations Consistent in AI Video
+### Date: August 16, 2026
+
+*A plain-language guide, based on what we learned studying Higgsfield's Cully Hill Boys production.*
+
+---
+
+## The One Big Idea
+
+**Never ask the AI to draw something from scratch more than once.**
+
+Instead:
+1. Draw it ONE really good time. This is your "anchor."
+2. Every time after that, don't describe it again — show it the anchor picture and say "keep this exactly the same, just change ONE small thing."
+
+Think of it like a photocopier, not an artist. You're not asking for a new drawing every time. You're asking for the same drawing with one small edit.
+
+---
+
+## Why This Matters
+
+When you describe a character or prop in words every single time, the AI redraws it slightly differently each time — that's why things "drift" (T-Hex looking a bit different shot to shot, a face looking slightly off).
+
+When you show it a picture and say "keep it the same, change only X," it barely drifts at all.
+
+---
+
+## The 3-Step Template (works for characters, props, AND locations)
+
+Every prompt has three parts, in this order:
+
+### Step 1: LOCK IT
+Say what must NOT change. Be specific — list the actual things.
+
+> "Keep the same face, same pose, same outfit, same lighting, same background. Do not change anything else."
+
+### Step 2: NAME THE ONE CHANGE
+Say exactly what's allowed to change — just one thing, described clearly.
+
+> "Only change the jacket color from black to red."
+
+### Step 3: CLOSE IT
+Repeat that everything else stays untouched. This is a safety net — it stops the AI from "helpfully" changing extra stuff.
+
+> "Everything else — face, pose, background — remains exactly the same."
+
+---
+
+## Real Examples
+
+### Example 1: Character (like Punky or Akari)
+
+> Keep the same person, same face, same pose, same outfit, same lighting, same background.
+> Only change: give him a scar across his left eyebrow, small and healed-looking.
+> Everything else stays exactly the same — face shape, expression, clothes, background.
+
+### Example 2: Prop (like T-Hex)
+
+> Do not redraw, restyle, recolor, or move anything. Every part of the image should look exactly like the original photo.
+> The only change: the left shoulder panel is dented inward, like it hit something hard.
+> Nothing else changes — same paint, same lighting, same angle, same background.
+
+### Example 3: Location (like the briefing room or refinery)
+
+> This is the exact same room as the reference photo. Keep every object the same — the same crates, same lighting, same wall texture. Change nothing about the room itself.
+> Only change: move the camera to show the room from the left side instead of straight-on.
+> Everything else — objects, lighting, colors — stays identical.
+
+---
+
+## The "Cheat Sheet" Prompt Formula
+
+Copy this and fill in the blanks:
+
+```
+Keep the same [face / object / room] — [list 2-4 things that must stay identical].
+Only change: [describe ONE thing, specifically].
+Everything else stays exactly the same.
+```
+
+For props specifically, add this stronger warning at the start — it works better for objects than for faces:
+
+```
+Do not redraw, restyle, recolor, or re-light anything. 
+Keep every part pixel-identical to the original.
+[then continue with the formula above]
+```
+
+---
+
+## One More Tip: Build a "Reference Sheet" First
+
+Before you generate ANY shots of a character, prop, or location — spend one generation making a really good multi-angle reference:
+
+- **Character:** front view + back/side view + close-up face, all in one image
+- **Prop:** 2 full views from different angles + 2 close-ups on the details that make it recognizable (a logo, a dent, a texture)
+- **Location:** one clear wide shot showing the whole space
+
+This becomes your "anchor" — the ONE picture you'll keep showing the AI and editing from, instead of redrawing from words every time.
+
+---
+
+## Quick Recap
+
+| Old way (causes drift) | New way (stays consistent) |
+|---|---|
+| Describe the whole thing in words every time | Show a picture, describe only the change |
+| "A robot with a dented shoulder, blue eyes, standing in a warehouse..." | [photo of T-Hex] + "only dent the left shoulder, nothing else changes" |
+| Hope it looks the same | Lock it, name the one change, close it |
+
+**Bottom line: Build it once. Edit it forever. Never redraw from scratch.**
+
+Prepared by Claude with supervision from Bill, August 16, 2026
+
+---
+
 ## Technique: Lock Geometry First, Animate Second
 *Added 2026-08-12. Verify this is still relevant before relying on it — model capabilities for spatial accuracy move fast, and this technique may become unnecessary as models improve.*
 
